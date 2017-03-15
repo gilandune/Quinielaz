@@ -187,3 +187,6 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+/RequestManagement/RequestManagement/Temp
+RequestManagement/RequestManagement/App/.vscode/launch.json
+/TravelExpenses/TravelExpenses/Temp

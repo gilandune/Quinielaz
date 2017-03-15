@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuinielazServices", "QuinielazServices\QuinielazServices.csproj", "{B5ACAE4B-A628-4181-A7D2-9F3A3A3833EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quinielaz", "Quinielaz\Quinielaz.csproj", "{9CE9D5CB-28AF-4DA6-8DE0-BE5E24C1BD59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuinielazCore", "QuinielazCore\QuinielazCore.csproj", "{B1B93E1D-1F23-4642-B3BD-C235B32F94E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5ACAE4B-A628-4181-A7D2-9F3A3A3833EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5ACAE4B-A628-4181-A7D2-9F3A3A3833EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5ACAE4B-A628-4181-A7D2-9F3A3A3833EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5ACAE4B-A628-4181-A7D2-9F3A3A3833EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CE9D5CB-28AF-4DA6-8DE0-BE5E24C1BD59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CE9D5CB-28AF-4DA6-8DE0-BE5E24C1BD59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CE9D5CB-28AF-4DA6-8DE0-BE5E24C1BD59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CE9D5CB-28AF-4DA6-8DE0-BE5E24C1BD59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1B93E1D-1F23-4642-B3BD-C235B32F94E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1B93E1D-1F23-4642-B3BD-C235B32F94E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1B93E1D-1F23-4642-B3BD-C235B32F94E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1B93E1D-1F23-4642-B3BD-C235B32F94E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
