@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="quinielazdbModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_usuarios">
+          <Key>
+            <PropertyRef Name="intUsuarioID" />
+          </Key>
+          <Property Name="intUsuarioID" Type="int" Nullable="false" />
+          <Property Name="vchNombre" Type="varchar" MaxLength="100" />
+          <Property Name="vchUsuario" Type="varchar" MaxLength="100" />
+          <Property Name="vchPassword" Type="varchar" MaxLength="100" />
+          <Property Name="vchEmail" Type="varchar" MaxLength="100" />
+          <Property Name="bitActivo" Type="bit" Nullable="false" />
+          <Property Name="datFecha" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="quinielazdbModelStoreContainer">
+          <EntitySet Name="tbl_usuarios" EntityType="Self.tbl_usuarios" Schema="quinielazdb" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="quinielazdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="quinielazdbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_usuarios" EntityType="quinielazdbModel.tbl_usuarios" />
+        </EntityContainer>
+        <EntityType Name="tbl_usuarios">
+          <Key>
+            <PropertyRef Name="intUsuarioID" />
+          </Key>
+          <Property Name="intUsuarioID" Type="Int32" Nullable="false" />
+          <Property Name="vchNombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="vchUsuario" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="vchPassword" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="vchEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="bitActivo" Type="Boolean" Nullable="false" />
+          <Property Name="datFecha" Type="DateTime" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="quinielazdbModelStoreContainer" CdmEntityContainer="quinielazdbEntities">
+          <EntitySetMapping Name="tbl_usuarios">
+            <EntityTypeMapping TypeName="quinielazdbModel.tbl_usuarios">
+              <MappingFragment StoreEntitySet="tbl_usuarios">
+                <ScalarProperty Name="datFecha" ColumnName="datFecha" />
+                <ScalarProperty Name="bitActivo" ColumnName="bitActivo" />
+                <ScalarProperty Name="vchEmail" ColumnName="vchEmail" />
+                <ScalarProperty Name="vchPassword" ColumnName="vchPassword" />
+                <ScalarProperty Name="vchUsuario" ColumnName="vchUsuario" />
+                <ScalarProperty Name="vchNombre" ColumnName="vchNombre" />
+                <ScalarProperty Name="intUsuarioID" ColumnName="intUsuarioID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
