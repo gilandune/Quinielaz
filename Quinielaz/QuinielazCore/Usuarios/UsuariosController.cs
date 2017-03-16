@@ -27,25 +27,28 @@ namespace QuinielazCore.Usuarios
             {
                 using (QuinielazDB = new quinielazdbEntities())
                 {
-                    var _usr = (from em in QuinielazDB.tbl_usuarios
-                                where em.bitActivo == true && em.vchUsuario == user && em.vchPassword == password
-                                select new
-                                {
-                                    Id = em.intUsuarioID,
-                                    Nombre = em.vchNombre ?? "",
-                                    _email = em.vchEmail ?? "",
-                                    bitActivo = em.bitActivo,
-                                    usuario = em.vchUsuario,
-                                    pass = em.vchPassword
-                                }).First();
-                    if (Success = _usr.Id > 0 ? true : false)
+                    if (QuinielazDB.tbl_usuarios.Any(u => u.vchUsuario == user && u.vchPassword == password && u.bitActivo))
                     {
-                        User.Id = _usr.Id;
-                        User.Nombre = _usr.Nombre;
-                        User.Correo = _usr._email;
-                        User.Activo = _usr.bitActivo;
-                        User.UserName = _usr.usuario;
-                        Token = Security.Encrypt(_usr.Id + "|" + user + "|" + password);
+                        var _usr = (from em in QuinielazDB.tbl_usuarios
+                                    where em.bitActivo == true && em.vchUsuario == user && em.vchPassword == password
+                                    select new
+                                    {
+                                        Id = em.intUsuarioID,
+                                        Nombre = em.vchNombre ?? "",
+                                        _email = em.vchEmail ?? "",
+                                        bitActivo = em.bitActivo,
+                                        usuario = em.vchUsuario,
+                                        pass = em.vchPassword
+                                    }).First();
+                        if (Success = _usr.Id > 0 ? true : false)
+                        {
+                            User.Id = _usr.Id;
+                            User.Nombre = _usr.Nombre;
+                            User.Correo = _usr._email;
+                            User.Activo = _usr.bitActivo;
+                            User.UserName = _usr.usuario;
+                            Token = Security.Encrypt(_usr.Id + "|" + user + "|" + password);
+                        }
                     }
                 }
             }
