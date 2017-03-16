@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="QuinielazServices.Service1" CodeBehind="QuinielazService.svc.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="QuinielazServices.QuinielazService" CodeBehind="QuinielazService.svc.cs" %>

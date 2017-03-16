@@ -1,0 +1,36 @@
+﻿<md-content layout="row" layout-align="center" style="background: url('WebApp/assets/football_background.png') ; background-size: cover; ">
+    <md-card style="max-width:400px;">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <span>Ingresar</span>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+        <md-progress-linear class="md-warn" ng-if="dataLoading" md-mode="indeterminate"></md-progress-linear>
+        <md-card-title>
+            <md-card-title-text>
+                <div style="background-color: rgba(255, 255, 255, 0.9);">
+                    <form style="min-width:280px; min-height:280px;">
+                        <md-input-container class="md-icon-float md-block" flex>
+                            <label>Usuario</label>
+                            <md-icon class="name fa fa-user fa-2x"></md-icon>
+                            <input ng-model="Request.Username" type="text">
+                        </md-input-container>
+                        <md-input-container class="md-icon-float md-block" flex>
+                            <label>Password</label>
+                            <md-icon class="name fa fa-lock fa-2x"></md-icon>
+                            <input ng-model="Request.Password" type="password">
+                        </md-input-container>
+                        <div layout="column" layout-align="center center">
+                            <div layout="row">
+                                <md-button ng-click="Registrar($event)">Registrar</md-button>
+                                <md-button class="md-raised md-primary" ng-click="Ingresar(Request, $event)" type="submit">Ingresar</md-button>
+                            </div>
+                            <a href="" ng-click="RecuperarCredenciales($event)" style="margin-top:10px;">¿Olvidó su contraseña?</a>
+                        </div>
+                    </form>
+                </div>
+            </md-card-title-text>
+        </md-card-title>
+    </md-card>
+</md-content>

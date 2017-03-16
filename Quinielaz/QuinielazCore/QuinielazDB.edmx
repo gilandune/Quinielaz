@@ -9,11 +9,11 @@
           <Key>
             <PropertyRef Name="intUsuarioID" />
           </Key>
-          <Property Name="intUsuarioID" Type="int" Nullable="false" />
-          <Property Name="vchNombre" Type="varchar" MaxLength="100" />
-          <Property Name="vchUsuario" Type="varchar" MaxLength="100" />
-          <Property Name="vchPassword" Type="varchar" MaxLength="100" />
-          <Property Name="vchEmail" Type="varchar" MaxLength="100" />
+          <Property Name="intUsuarioID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vchNombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="vchUsuario" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="vchPassword" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="vchEmail" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="bitActivo" Type="bit" Nullable="false" />
           <Property Name="datFecha" Type="datetime" Precision="0" />
         </EntityType>
@@ -31,11 +31,11 @@
           <Key>
             <PropertyRef Name="intUsuarioID" />
           </Key>
-          <Property Name="intUsuarioID" Type="Int32" Nullable="false" />
-          <Property Name="vchNombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="vchUsuario" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="vchPassword" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="vchEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="intUsuarioID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vchNombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="vchUsuario" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="vchPassword" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="vchEmail" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="bitActivo" Type="Boolean" Nullable="false" />
           <Property Name="datFecha" Type="DateTime" />
         </EntityType>

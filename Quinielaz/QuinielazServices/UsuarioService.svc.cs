@@ -3,6 +3,7 @@ using QuinielazCore.Entidades;
 using QuinielazCore.Usuarios;
 using QuinielazServices.DataContracts.Usuarios.Request;
 using QuinielazServices.DataContracts.Usuarios.Response;
+using QuinielazServices.ServiceContracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace QuinielazServices
             UsuariosController controller = new UsuariosController();
             Usuario entidad = new Usuario();
             string Token = string.Empty;
-            Response.Success = controller.Logear(Request.username, Request.password, ref entidad, ref Token);
+            Response.Success = controller.Logear(Request.Username, Request.Password, ref entidad, ref Token);
             Response.CurrentUser = entidad;
             Response.Token = Token;
             return Response;

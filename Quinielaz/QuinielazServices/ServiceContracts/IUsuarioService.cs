@@ -1,16 +1,20 @@
-﻿using System;
+﻿using QuinielazServices.DataContracts.Usuarios.Request;
+using QuinielazServices.DataContracts.Usuarios.Response;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.ServiceModel.Web;
 using System.Text;
 
-namespace QuinielazServices
+namespace QuinielazServices.ServiceContracts
 {
-    // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de interfaz "IUsuarioService" en el código y en el archivo de configuración a la vez.
     [ServiceContract]
     public interface IUsuarioService
     {
-
+        [OperationContract]
+        [WebInvoke]
+        LoginResponse Login(LoginRequest Request);
     }
 }

@@ -1,4 +1,5 @@
-﻿angular.module('Quinielaz', ['ngMaterial', 'ngRoute', 'ngCookies'])
+﻿angular.module('Login', ['ngMaterial', 'ngMessages']);
+angular.module('Quinielaz', ['ngMaterial', 'ngRoute', 'ngCookies', 'Login'])
 .config(function ($mdThemingProvider) {
     $mdThemingProvider.theme('default')
         .primaryPalette('blue', {
@@ -33,3 +34,43 @@
         return m.isValid() ? m.toDate() : new Date(NaN);
     };
 })
+.config(['$routeProvider', function ($routeProvider) {
+    $routeProvider
+    .when('/Login', {
+        templateUrl: 'WebApp/Modules/Login/LoginView.html',
+        controller: 'LoginController'
+    })
+    .when('/', {
+        templateUrl: 'WebApp/Modules/Main/MainView.html',
+        controller: 'MainController'
+    })
+}])
+.run(['$rootScope', '$location', '$cookieStore', '$http',
+    function ($rootScope, $location, $cookieStore, $http) {
+        $rootScope.logeado = false;
+        $rootScope.Globals = $cookieStore.get('Globals') || {};
+        if ($rootScope.Globals.CurrentUser) {
+            $rootScope.logeado = true;
+        }
+        $rootScope.$on('$locationChangeStart', function (event, next, current) {
+            if ($location.path() !== '/Login' && !$rootScope.Globals.CurrentUser)
+                $location.path('/Login');
+
+            var lastString = '';
+            var res = next.split("/");
+            while (lastString === '')
+                lastString = res.pop();
+            switch (lastString) {
+                case 'Login':
+                    $location.path('/Login');
+                    break;
+                default:
+                    if ($rootScope.Globals.CurrentUser) {
+                        $location.path('/');
+                    }
+                    else
+                        $location.path('/Login');
+                    break;
+            }
+        })
+    }]);
